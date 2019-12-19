@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: creating automatic nodes through dynamic concept in ansible
+    ec2:
+    key_name: pemfile name
+    instance_type: t2.micro
+    image: ami-123456
+    wait: yes
+    group: security group
+    count: 3
+    vpc_subnet_id: subnet-29e63245
+    assign_public_ip: yes
+    instance_tags:
+       Name: instancename
